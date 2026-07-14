@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kessler Design Labs – Systems & Clinical Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --light-sky: #cfe9ff;
+      --aqua-blue: #7fd3ff;
+      --white-ice: #f5fbff;
+      --frosted-mint: #c9f5e5;
+      --lavender-blue: #cfd4ff;
+      --pastel-pink: #ffd6e8;
+      --coral: #ff8a7a;
+      --peach-puff: #ffd1a3;
+      --apricot: #ffb676;
+      --ivory-glow: #fff7e3;
+      --vanilla: #fff1cc;
+      --light-lemon: #fff7a8;
+      --light-gray: #e5e7eb;
+      --dark-gray: #4b5563;
+      --dark-purple: #3b2a5a;
+      --black: #111827;
+      --bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    header {
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      color: var(--dark-purple);
+      margin-bottom: 0.4rem;
+    }
+
+    header h2 {
+      font-size: 1rem;
+      color: var(--dark-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      max-width: 680px;
+      color: var(--dark-gray);
+    }
+
+    .quote {
+      margin-top: 1.5rem;
+      padding: 1rem 1.25rem;
+      border-left: 4px solid var(--coral);
+      background: var(--white-ice);
+      font-style: italic;
+      color: var(--dark-purple);
+    }
+
+    nav {
+      margin: 2rem 0 2.5rem;
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      background: var(--white-ice);
+      border: 1px solid var(--light-gray);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      background: var(--light-sky);
+      color: var(--dark-purple);
+      transition: background 0.15s ease, transform 0.1s ease;
+    }
+
+    nav a:hover {
+      background: var(--aqua-blue);
+      transform: translateY(-1px);
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--light-gray);
+    }
+
+    section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--dark-purple);
+    }
+
+    section h4 {
+      font-size: 1.05rem;
+      margin-top: 0.75rem;
+      margin-bottom: 0.25rem;
+      color: var(--black);
+    }
+
+    p {
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      margin: 0.35rem 0 0.75rem 1.25rem;
+    }
+
+    li {
+      margin-bottom: 0.25rem;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-right: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .pill-beh { background: var(--peach-puff); color: var(--black); }
+    .pill-emo { background: var(--pastel-pink); color: var(--black); }
+    .pill-cog { background: var(--lavender-blue); color: var(--black); }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .card {
+      border-radius: 0.75rem;
+      border: 1px solid var(--light-gray);
+      padding: 1rem 1.1rem;
+      background: var(--white-ice);
+    }
+
+    .card h4 {
+      margin-top: 0;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--dark-gray);
+      margin-bottom: 0.35rem;
+    }
+
+    .badge-theory { color: var(--dark-purple); }
+    .badge-brain { color: var(--coral); }
+    .badge-system { color: var(--dark-purple); }
+
+    .placeholder {
+      padding: 1rem 1.25rem;
+      border-radius: 0.75rem;
+      border: 1px dashed var(--light-gray);
+      background: var(--white-ice);
+      color: var(--dark-gray);
+      font-size: 0.9rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--light-gray);
+      font-size: 0.85rem;
+      color: var(--dark-gray);
+    }
+
+    @media (min-width: 768px) {
+      header h1 { font-size: 2.7rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Kessler Design Labs</h1>
+      <h2>Systems & Clinical Portfolio · Samantha Kessler, M.S., CCC‑SLP</h2>
+      <p>
+        A warm‑clinical‑playful collection of systems, tools, and learning frameworks built at the intersection of
+        speech‑language pathology, K–12 education, and design. This site showcases both **systems architecture**
+        and **clinical artifacts** used in real schools and pediatric contexts.
+      </p>
+      <div class="quote">
+        “Engagement is not the dessert of learning; it is the main course.”
+      </div>
+    </header>
+
+    <nav>
+      <a href="#engagement-architecture">Engagement Architecture</a>
+      <a href="#pbis-paws">PBIS · PAUSE for PAWS</a>
+      <a href="#social-stories">Early Childhood Social Stories</a>
+      <a href="#pediatric-vpi">Pediatric VPI Screening</a>
+      <a href="#systems-overview">Systems Overview</a>
+      <a href="#about-samantha">About Samantha</a>
+    </nav>
+
+    <!-- SYSTEMS PORTFOLIO: ENGAGEMENT ARCHITECTURE -->
+    <section id="engagement-architecture">
+      <h3>Engagement Architecture</h3>
+      <p>
+        A science‑backed learning system that integrates neuroscience, educational theory, behavioral science,
+        and practical classroom strategies into one cohesive framework for K–12 educators and clinicians.
+      </p>
+
+      <h4>Dimensions of Engagement</h4>
+      <p>Effective learning environments activate three interlocking dimensions:</p>
+      <span class="pill pill-beh">Behavioral</span>
+      <span class="pill pill-emo">Emotional</span>
+      <span class="pill pill-cog">Cognitive</span>
+
+      <h4>Behavioral Engagement</h4>
+      <p>Visible actions, effort, participation, routines, transitions, and on‑task behavior.</p>
+
+      <h4>Emotional Engagement</h4>
+      <p>Belonging, interest, safety, connection, motivation, and relational trust.</p>
+
+      <h4>Cognitive Engagement</h4>
+      <p>Deep thinking, strategy use, mental investment, problem‑solving, and mastery.</p>
+
+      <h4>Educational Theories of Engagement</h4>
+      <div class="card-grid">
+        <div class="card">
+          <div class="badge badge-theory">Constructivism</div>
+          <h4>Core Idea</h4>
+          <p>Learners actively construct understanding through experience, reflection, and social interaction.</p>
+          <h4>Engagement Strategies</h4>
+          <ul>
+            <li>Hands‑on, experiential tasks</li>
+            <li>Project‑based learning and role‑play</li>
+            <li>Peer collaboration and group work</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="badge badge-theory">Humanism</div>
+          <h4>Core Idea</h4>
+          <p>Learning thrives when students feel safe, valued, and autonomous.</p>
+          <h4>Engagement Strategies</h4>
+          <ul>
+            <li>Choice and autonomy in tasks and materials</li>
+            <li>Warm, positive relationships</li>
+            <li>Emotionally safe environments for risk‑taking</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="badge badge-theory">Behaviorism</div>
+          <h4>Core Idea</h4>
+          <p>Observable behaviors are shaped by reinforcement and structured environments.</p>
+          <h4>Engagement Strategies</h4>
+          <ul>
+            <li>Clear expectations and routines</li>
+            <li>Consistent reinforcement systems</li>
+            <li>Immediate, specific feedback</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4>Evidence of Engagement</h4>
+      <p><strong>Active Learning vs Passive Learning:</strong> Students learn more in active environments, even when they feel like they learned more from lectures.</p>
+      <p><strong>Interaction and Feedback:</strong> High interpersonal interaction and consistent, constructive feedback correlate with better performance.</p>
+      <p><strong>Movement and Breaks:</strong> Frequent, active breaks and integrated movement enhance cognitive performance and engagement.</p>
+      <p><strong>Chunking Instruction:</strong> Short instructional blocks (e.g., three 10‑minute lessons) outperform single long stretches for K–4 students.</p>
+      <p><strong>Predictable Routines:</strong> Clear routines lower stress and free mental energy for deep engagement.</p>
+
+      <h4>Behavioral Engagement Strategies</h4>
+      <ul>
+        <li><strong>Exit Tickets (3‑2‑1):</strong> Every student participates; you gain immediate data.</li>
+        <li><strong>Whip Around:</strong> One‑word or one‑sentence responses from every student.</li>
+        <li><strong>Novelty in Delivery:</strong> Simple changes in environment or materials to renew attention.</li>
+        <li><strong>Integrated Movement:</strong> Short, active breaks and movement‑based tasks.</li>
+        <li><strong>Predictable Routines:</strong> Consistent openings, transitions, and closings.</li>
+      </ul>
+
+      <h4>Emotional Engagement Strategies</h4>
+      <ul>
+        <li><strong>Connection Circles:</strong> Two‑minute non‑academic check‑ins to build belonging.</li>
+        <li><strong>Growth Mindset Mistake Modeling:</strong> Mistakes framed as data, not failure.</li>
+        <li><strong>“Would You Rather?” Polls:</strong> Movement + choice + opinion to boost emotional investment.</li>
+      </ul>
+
+      <h4>Cognitive Engagement Strategies</h4>
+      <ul>
+        <li><strong>Think‑Pair‑Share:</strong> Individual thinking, partner discussion, group sharing.</li>
+        <li><strong>Jigsaw Method:</strong> Students become “experts” and teach their group.</li>
+        <li><strong>Question Formulation Technique (QFT):</strong> Students generate and prioritize their own questions.</li>
+      </ul>
+
+      <h4>Neurobiology of Engagement</h4>
+      <div class="card-grid">
+        <div class="card">
+          <div class="badge badge-brain">Prefrontal Cortex (PFC)</div>
+          <h4>Executive Function & Cognitive Engagement</h4>
+          <p>The “CEO” of the brain, active during:</p>
+          <ul>
+            <li>Working memory</li>
+            <li>Inhibition and impulse control</li>
+            <li>Planning and decision‑making</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="badge badge-brain">Dopaminergic System</div>
+          <h4>Reward, Motivation, Emotional Engagement</h4>
+          <p>Includes the VTA and Nucleus Accumbens; activated by:</p>
+          <ul>
+            <li>Novelty and curiosity</li>
+            <li>Specific, immediate positive feedback</li>
+            <li>Success experiences and goal achievement</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4>Developmental Attention Span</h4>
+      <p><strong>Short Blocks:</strong> Three 10‑minute lessons with calm breaks outperform one 30‑minute stretch.</p>
+      <p><strong>15:5 Ratio:</strong> ~15 minutes of focused work followed by ~5 minutes of break aligns with K–2 attention ranges.</p>
+    </section>
+
+    <!-- SYSTEMS PORTFOLIO: PBIS / PAUSE FOR PAWS -->
+    <section id="pbis-paws">
+      <h3>PBIS Tier 2 System – “PAUSE for PAWS” Academy</h3>
+      <p>
+        A Tier 2 Friday intervention system designed for Arrowhead Elementary to support students who need
+        explicit instruction in behavioral replacement skills, aligned to building‑wide PAWS expectations.
+      </p>
+
+      <div class="card">
+        <div class="badge badge-system">System Overview</div>
+        <h4>Purpose</h4>
+        <p>
+          The PAUSE for PAWS Academy replaces purely punitive responses (loss of Fun Friday, ISS/OSS) with
+          structured, small‑group instruction focused on skill building.
+        </p>
+        <h4>Core Skills Targeted</h4>
+        <ul>
+          <li>Impulse control</li>
+          <li>Emotional regulation</li>
+          <li>Conflict resolution</li>
+          <li>Accountability and ownership</li>
+          <li>Communication (verbal and nonverbal)</li>
+          <li>Social awareness and help‑seeking</li>
+        </ul>
+      </div>
+
+      <h4>Alignment to PAWS</h4>
+      <ul>
+        <li><strong>P – Practice Kindness:</strong> empathy, social awareness, respectful communication.</li>
+        <li><strong>A – Act Responsibly:</strong> accountability, impulse control, ownership.</li>
+        <li><strong>W – Work Hard:</strong> self‑regulation, perseverance, goal setting.</li>
+        <li><strong>S – Stay Safe:</strong> safe bodies, safe words, conflict resolution.</li>
+      </ul>
+
+      <h4>How the Academy Works</h4>
+      <ul>
+        <li>4‑week small‑group cycles</li>
+        <li>Direct teaching, modeling, role‑play</li>
+        <li>Reflection and goal setting</li>
+        <li>Weekly PAWS progress tracking</li>
+        <li>Placement based on behavior data and teacher referral</li>
+      </ul>
+
+      <h4>Teacher FAQs (System Design)</h4>
+      <ul>
+        <li><strong>Not a punishment:</strong> Tier 2 intervention focused on instruction and growth.</li>
+        <li><strong>Fun Friday timing:</strong> Skill restoration during a privilege tied to PAWS expectations.</li>
+        <li><strong>Selection:</strong> Data‑based referral (referrals, peer conflict, regulation difficulties).</li>
+        <li><strong>Exit criteria:</strong> Improved data, consistent skills, independent PAWS expectations.</li>
+        <li><strong>Additional supports:</strong> Check‑in/check‑out, parent collaboration, behavior contracts, Tier 3 planning.</li>
+        <li><strong>No lost instructional time:</strong> Academy occurs during Fun Friday.</li>
+      </ul>
+
+      <h4>Teacher Role</h4>
+      <ul>
+        <li>Use consistent PAWS language</li>
+        <li>Provide behavior data when requested</li>
+        <li>Reinforce academy strategies in class</li>
+        <li>Communicate patterns and improvements</li>
+      </ul>
+
+      <p><strong>Ultimate Shift:</strong> From “Why is this student misbehaving?” to “What skill does this student need to learn?”</p>
+    </section>
+
+    <!-- CLINICAL PORTFOLIO: SOCIAL STORIES -->
+    <section id="social-stories">
+      <h3>Early Childhood Social Stories Library</h3>
+      <p>
+        A suite of AI‑assisted, clinician‑authored social stories designed to support young children with
+        regulation, safety, and social‑emotional understanding.
+      </p>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="badge">Social Story</div>
+          <h4>Gentle Hands, Safe Bodies</h4>
+          <p>Introduces the concept of gentle touch and body safety in simple, child‑friendly language.</p>
+        </div>
+
+        <div class="card">
+          <div class="badge">Social Story</div>
+          <h4>Sometimes I Hit, Bite, Push, or Kick</h4>
+          <p>Names challenging behaviors and connects them to feelings and impact on others.</p>
+        </div>
+
+        <div class="card">
+          <div class="badge">Social Story</div>
+          <h4>Hitting and Biting Hurt</h4>
+          <p>Explains that physical aggression can cause fear, sadness, and physical pain.</p>
+        </div>
+
+        <div class="card">
+          <div class="badge">Social Story</div>
+          <h4>Big Feelings</h4>
+          <p>Normalizes anger, fear, and overwhelm as common human experiences.</p>
+        </div>
+
+        <div class="card">
+          <div class="badge">Social Story</div>
+          <h4>Why I Might Do These Things</h4>
+          <p>Frames behavior as communication from the body, not “badness,” and invites adult support.</p>
+        </div>
+
+        <div class="card">
+          <div class="badge">Social Story</div>
+          <h4>What I Can Do Instead</h4>
+          <p>Provides replacement strategies: using words, asking for help, breathing, fidgets, quiet space.</p>
+        </div>
+
+        <div class="card">
+          <div class="badge">Social Story</div>
+          <h4>Hands Are for High Fives, Helping, and Playing</h4>
+          <p>Reframes hands as tools for connection, cooperation, and gentle play.</p>
+        </div>
+
+        <div class="card">
+          <div class="badge">Social Story</div>
+          <h4>If I Hurt Someone</h4>
+          <p>Models repair: stop, say “I’m sorry,” get help from an adult, try a safe choice next time.</p>
+        </div>
+      </div>
+
+      <p>
+        These stories follow a clinical sequence: trigger → feeling → behavior → meaning → replacement skill →
+        repair, and are designed for use in early childhood classrooms, Tier 2 interventions, and parent coaching.
+      </p>
+    </section>
+
+    <!-- CLINICAL PORTFOLIO: PEDIATRIC VPI -->
+    <section id="pediatric-vpi">
+      <h3>Pediatric Velopharyngeal Incompetence (VPI) Screening Questionnaire</h3>
+      <p>
+        A caregiver‑completed screening tool for identifying potential velopharyngeal dysfunction in children,
+        integrating speech, feeding, breathing, and medical history domains.
+      </p>
+
+      <h4>Structure</h4>
+      <ul>
+        <li>Personal information (name, DOB, gender, age in months)</li>
+        <li>Caregiver instructions with a 0–4 rating scale (Never → Always)</li>
+        <li>Section 1: Speech & Voice</li>
+        <li>Section 2: Feeding & Swallowing</li>
+        <li>Section 3: Breathing & Resonance</li>
+        <li>Section 4: Developmental & Medical History (Yes/No)</li>
+        <li>Screening interpretation ranges (0–10, 11–20, 21+)</li>
+      </ul>
+
+      <h4>Domains Assessed</h4>
+      <ul>
+        <li>Nasal resonance and air escape during pressure consonants</li>
+        <li>Speech clarity, strength, and use of compensatory sounds</li>
+        <li>Food/liquid nasal regurgitation, coughing, gagging, choking</li>
+        <li>Texture and thin liquid difficulties</li>
+        <li>Chronic “stuffy” sound, nasal puffs/snorts, fatigue with talking</li>
+        <li>Cleft palate/craniofacial history, ear infections, palate/adenoid surgeries</li>
+      </ul>
+
+      <h4>Interpretation (Screening Only)</h4>
+      <ul>
+        <li><strong>0–10 points:</strong> Few or no concerns; monitor development.</li>
+        <li><strong>11–20 points:</strong> Some concerns; consider discussion with pediatrician or SLP.</li>
+        <li><strong>21+ points:</strong> Strong concerns; referral to cleft/craniofacial team or VPI‑experienced SLP.</li>
+      </ul>
+
+      <p>
+        This tool is explicitly framed as a screening instrument, not a diagnosis, and is designed to support
+        early identification and appropriate referral pathways.
+      </p>
+    </section>
+
+    <!-- SYSTEMS OVERVIEW -->
+    <section id="systems-overview">
+      <h3>Systems Overview</h3>
+      <p>
+        This portfolio currently showcases four major systems/artifacts, with more to be added:
+      </p>
+      <ul>
+        <li><strong>Engagement Architecture:</strong> Learning‑science framework for K–12 engagement.</li>
+        <li><strong>PBIS – PAUSE for PAWS Academy:</strong> Tier 2 behavior and leadership system.</li>
+        <li><strong>Early Childhood Social Stories Library:</strong> AI‑assisted, clinician‑authored SEL tools.</li>
+        <li><strong>Pediatric VPI Screening Questionnaire:</strong> Clinical screening tool for velopharyngeal competence.</li>
+      </ul>
+      <div class="placeholder">
+        Future additions: literacy systems, SPED scheduling dashboards, onboarding frameworks, app prototypes,
+        and additional clinical tools will be integrated here as the portfolio grows.
+      </div>
+    </section>
+
+    <!-- ABOUT SAMANTHA -->
+    <section id="about-samantha">
+      <h3>About Samantha</h3>
+      <p>
+        Samantha Kessler, M.S., CCC‑SLP, is a K–12 educator, instructional leader, and pediatric speech‑language
+        pathologist who builds systems at the intersection of clinical practice, learning science, and design.
+      </p>
+      <p>
+        Her work spans early intervention, PBIS, social‑emotional learning, pediatric screening tools, and
+        engagement architecture—always with a warm‑clinical‑playful aesthetic and a focus on scalable, humane
+        systems.
+      </p>
+    </section>
+
+    <footer>
+      <p>
+        Kessler Design Labs · Systems & Clinical Portfolio<br />
+        This single HTML file can serve as your live site entry point (<code>index.html</code>) and be expanded
+        as new artifacts are added.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
